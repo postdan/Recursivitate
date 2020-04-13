@@ -22,14 +22,14 @@ namespace Recursivitate
             return Math.Max(vector[n - 1], FindMax(vector, n - 1));
         }
 
-        public static double Fibonaci(int n)
+        public static ulong Fibonacci(int n)
         {
         
         if (n <= 1)
             {
-                return 1;
+                return Convert.ToUInt64(n);
             }
-            return Fibonaci(n - 1) + Fibonaci(n - 2);
+            return Fibonacci(n - 1) + Fibonacci(n - 2);
         }
         
         public static int ReadNumber()
@@ -58,8 +58,8 @@ namespace Recursivitate
             int n = Vector.Length;
             Console.WriteLine($"Valoare minima este:{FunctiiRecursive.FindMin(Vector, n)}");
             Console.WriteLine($"Valoare maxima este:{FunctiiRecursive.FindMax(Vector, n)}");
-            n = FunctiiRecursive.ReadNumber();
-            Console.WriteLine($"Sirul lui Fibonaci pentru n={n} este: {FunctiiRecursive.Fibonaci(n)}");
+            int m = FunctiiRecursive.ReadNumber();
+            Console.WriteLine($"Sirul lui Fibonaci pentru n={m} este: {FunctiiRecursive.Fibonacci(m)}");
 
         }
     }
